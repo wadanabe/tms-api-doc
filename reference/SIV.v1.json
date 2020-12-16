@@ -1,0 +1,516 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "SIV",
+    "version": "1.0",
+    "description": ""
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "paths": {
+    "/api/getSivWorkOrderListByPcbNo": {
+      "parameters": [],
+      "post": {
+        "summary": "",
+        "operationId": "post-api-getSivWorkOrderListByPcbNo",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "formStatus": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "pcbNo": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "pcbVersion": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "createWoDate": {
+                      "type": "number"
+                    },
+                    "startDate": {
+                      "type": "number"
+                    },
+                    "endDate": {
+                      "type": "number"
+                    },
+                    "actualEndDate": {
+                      "type": "number"
+                    },
+                    "projectCode": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "projectName": {
+                      "type": "string"
+                    },
+                    "stage": {
+                      "type": "string"
+                    },
+                    "customer": {
+                      "type": "string"
+                    },
+                    "projectType": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "BU": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "name": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "BU",
+                        "name"
+                      ]
+                    },
+                    "platForm": {
+                      "type": "string"
+                    },
+                    "tmName": {
+                      "type": "array",
+                      "items": {
+                        "required": [],
+                        "properties": {}
+                      }
+                    },
+                    "eeName": {
+                      "type": "array",
+                      "items": {
+                        "required": [],
+                        "properties": {}
+                      }
+                    },
+                    "pmName": {
+                      "type": "array",
+                      "items": {
+                        "required": [],
+                        "properties": {}
+                      }
+                    },
+                    "eeLeaderName": {
+                      "type": "array",
+                      "items": {
+                        "required": [],
+                        "properties": {}
+                      }
+                    },
+                    "pccName": {
+                      "type": "array",
+                      "items": {
+                        "required": [],
+                        "properties": {}
+                      }
+                    },
+                    "swWindow": {
+                      "type": "array",
+                      "uniqueItems": true,
+                      "minItems": 1,
+                      "items": {
+                        "required": [
+                          "id",
+                          "name",
+                          "dept"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "name": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "dept": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        }
+                      }
+                    },
+                    "meWindow": {
+                      "type": "array",
+                      "uniqueItems": true,
+                      "minItems": 1,
+                      "items": {
+                        "required": [
+                          "id",
+                          "name",
+                          "dept"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "name": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "dept": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        }
+                      }
+                    },
+                    "biosWindow": {
+                      "type": "array",
+                      "uniqueItems": true,
+                      "minItems": 1,
+                      "items": {
+                        "required": [
+                          "id",
+                          "name",
+                          "dept"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "name": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "dept": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        }
+                      }
+                    },
+                    "contactWindow": {
+                      "type": "array",
+                      "uniqueItems": true,
+                      "minItems": 1,
+                      "items": {
+                        "required": [
+                          "id",
+                          "name",
+                          "dept"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "name": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "dept": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        }
+                      }
+                    },
+                    "errorTypeComment": {
+                      "type": "string"
+                    },
+                    "teamNoteComment": {
+                      "type": "string"
+                    },
+                    "pcbType": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "name": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "name"
+                      ]
+                    },
+                    "pcbLayer": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "vgaChip": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "vram": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "lcdSize": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "name": {
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "name"
+                      ]
+                    },
+                    "housingTypeA": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "name": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "name"
+                      ]
+                    },
+                    "housingTypeB": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "housingTypeC": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "housingTypeD": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "biosVersion": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "name": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "name"
+                      ]
+                    },
+                    "vBiosVersion": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "driverVersion": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "formStatus",
+                    "pcbNo",
+                    "pcbVersion",
+                    "createWoDate",
+                    "startDate",
+                    "endDate",
+                    "actualEndDate",
+                    "projectCode",
+                    "projectName",
+                    "stage",
+                    "customer",
+                    "projectType",
+                    "platForm",
+                    "tmName",
+                    "eeName",
+                    "pmName",
+                    "eeLeaderName",
+                    "pccName",
+                    "swWindow",
+                    "meWindow",
+                    "biosWindow",
+                    "contactWindow",
+                    "errorTypeComment",
+                    "teamNoteComment",
+                    "pcbType",
+                    "pcbLayer",
+                    "vgaChip",
+                    "vram",
+                    "lcdSize",
+                    "housingTypeA",
+                    "housingTypeB",
+                    "housingTypeC",
+                    "housingTypeD",
+                    "biosVersion",
+                    "vBiosVersion",
+                    "driverVersion"
+                  ]
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "id": "4027213c-7e2f-4de9-9dd9-dbeabcb9e095",
+                      "formStatus": "approved",
+                      "pcbNo": "1114",
+                      "pcbVersion": "333",
+                      "createWoDate": 1607938773778,
+                      "startDate": 1608095699000,
+                      "endDate": 1608268499000,
+                      "actualEndDate": 1607875200000,
+                      "projectCode": "emcTestData4",
+                      "projectName": "",
+                      "stage": "",
+                      "customer": "",
+                      "projectType": {
+                        "id": "c0402",
+                        "BU": "CBPG",
+                        "name": "normal"
+                      },
+                      "platForm": "",
+                      "tmName": [],
+                      "eeName": [],
+                      "pmName": [],
+                      "eeLeaderName": [],
+                      "pccName": [],
+                      "swWindow": [
+                        {
+                          "id": "10503201",
+                          "name": "Jill1",
+                          "dept": "MRA888"
+                        },
+                        {
+                          "id": "10503201",
+                          "name": "Jill1",
+                          "dept": "MRA888"
+                        }
+                      ],
+                      "meWindow": [
+                        {
+                          "id": "10503201",
+                          "name": "Jill1",
+                          "dept": "MRA888"
+                        },
+                        {
+                          "id": "10503201",
+                          "name": "Jill1",
+                          "dept": "MRA888"
+                        }
+                      ],
+                      "biosWindow": [
+                        {
+                          "id": "10503201",
+                          "name": "Jill1",
+                          "dept": "MRA888"
+                        },
+                        {
+                          "id": "10503201",
+                          "name": "Jill1",
+                          "dept": "MRA888"
+                        }
+                      ],
+                      "contactWindow": [
+                        {
+                          "id": "10503201",
+                          "name": "Jill1",
+                          "dept": "MRA888"
+                        },
+                        {
+                          "id": "10503201",
+                          "name": "Jill1",
+                          "dept": "MRA888"
+                        }
+                      ],
+                      "errorTypeComment": "",
+                      "teamNoteComment": "",
+                      "pcbType": {
+                        "id": "ddd",
+                        "name": "name2"
+                      },
+                      "pcbLayer": "layer",
+                      "vgaChip": "chip",
+                      "vram": "vram",
+                      "lcdSize": {
+                        "id": "100",
+                        "name": 10
+                      },
+                      "housingTypeA": {
+                        "id": "A",
+                        "name": "type A"
+                      },
+                      "housingTypeB": "houseTypeB",
+                      "housingTypeC": "houseTypeC",
+                      "housingTypeD": "houseTypeD",
+                      "biosVersion": {
+                        "id": "vvvv",
+                        "name": "v1234"
+                      },
+                      "vBiosVersion": "m222113",
+                      "driverVersion": "d33533"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "id": "4027213c-7e2f-4de9-9dd9-dbeabcb9e095"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {}
+  }
+}
